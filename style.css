@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #C2D8B9;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: 1em 0;
+  }
+  
+  #to-do-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+  
+  #task-input {
+    padding: 0.5em;
+    margin-right: 0.5em;
+    font-size: 1.2em;
+    flex-grow: 1;
+    border-radius: 5px;
+    border: none;
+    background-color: #E4F0D0;
+    box-shadow: 1px 1px 3px #ccc;
+  }
+  
+  #task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #task-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #ccc;
+  }
+
+  button{
+    background:  #E4F0D0;
+    border: none;
+  }
+
+  button:hover{
+    cursor:pointer;
+    background:  #A1B5D8;
+  }
+  
+  .task-controls {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+  
+  .task-controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.5em;
+    font-size: 1.5em;
+    color: #666;
+  }
+  
+  .task-controls button:hover {
+    color: #000;
+  }
+  
+/* Add the following to your existing CSS */
+
+#task-list li {
+    /* existing styles */
+    animation: slide-in 0.5s ease-out;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateY(-1em);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  #task-list li.removing {
+    animation: slide-out 0.5s ease-out;
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-1em);
+      opacity: 0;
+    }
+  }
+    
+  #task-list li span {
+    /* existing styles */
+    transition: text-decoration 0.5s ease-out;
+  }
+  
+  #task-list li.completing span {
+    text-decoration: line-through;
+  }
